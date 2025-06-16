@@ -1,0 +1,35 @@
+{
+  "name": "jsfull",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TatianaVakaruk/jsfull.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TatianaVakaruk/jsfull/issues"
+  },
+  "homepage": "https://github.com/TatianaVakaruk/jsfull#readme",
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "prettier": "^3.5.3",
+    "sudo": "^1.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/eslint-parser": "^7.27.0",
+    "@babel/preset-env": "^7.27.2"
+  },
+  "description": ""
+}
