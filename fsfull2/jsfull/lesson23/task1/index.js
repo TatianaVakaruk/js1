@@ -5,7 +5,7 @@ const emailErrorElem = document.querySelector(".error-text_email");
 const passwordErrorElem = document.querySelector(".error-text_password");
 
 const isRequared = (value) => {
-  return (value ? undefined : "Requared");
+  return (value ? undefined : JSON.stringify({"inverse":false,"sample":"Required"}));
 };
 const isEmail = (value) => {
   return (value.includes("@") ? undefined : "Should be an email");
