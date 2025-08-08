@@ -1,13 +1,13 @@
 import { addImage } from "./addImage";
 export const addImageV2 = (url) => {
  return new Promise((resolve, reject) => {
-   addImage(url, (error, result)) { 
+   addImage(url, (error, result) => { 
  if (error){
     reject(error);
  } else {
-    resolve(result);
+    resolve(...result);
  }
- }
+ });
 });
 }
 
