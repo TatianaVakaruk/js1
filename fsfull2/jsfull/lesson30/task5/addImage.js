@@ -1,6 +1,6 @@
 export const addImage = (url, callback) => {
-  const img = document.createElement('img');
-  img.setAttribute('alt', 'User avatar');
+  const img = document.createElement("img");
+  img.setAttribute("alt", "User avatar");
   img.src = url;
 
   const pageElem = document.querySelector(".page");
