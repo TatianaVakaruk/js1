@@ -3,11 +3,7 @@ const baseUrl = "https://63ad3e19da81ba97619671ad.mockapi.io/users";
 const buttonElem = document.querySelector(".submit-button");
 const formElem = document.querySelector(".login-form");
 
-const onClick = () => {
-  alert(JSON.stringify(Object.fromEntries(new FormData(formElem))));
-
-  formElem.reset();
-
+const onRequest = () => {
   return fetch(baseUrl, {
         method: 'POST',
         headers: {
@@ -15,6 +11,13 @@ const onClick = () => {
         },
         body: JSON.stringify(Object.fromEntries(new FormData(formElem))),
     });
+}
+const onClick = () => {
+  onRequest();
+alert(JSON.stringify(Object.fromEntries(new FormData(formElem))));
+
+  formElem.reset();
+
     
 };
 const onInput = () => {
