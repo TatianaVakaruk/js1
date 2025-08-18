@@ -3,23 +3,21 @@ const baseUrl = "https://63ad3e19da81ba97619671ad.mockapi.io/users";
 const buttonElem = document.querySelector(".submit-button");
 const formElem = document.querySelector(".login-form");
 
-const onRequest = () => {
+const putData = (data) => {
+  data = Object.fromEntries(new FormData(formElem));
   return fetch(baseUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-        },
-        body: JSON.stringify(Object.fromEntries(new FormData(formElem))),
-    });
-}
-const onClick = () => {
-  onRequest();
-alert(JSON.stringify(Object.fromEntries(new FormData(formElem))));
-
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+    },
+    body: JSON.stringify(data),
+}).then(response => response.json())
+.then(data => {
+  alert(JSON.stringify(data));
   formElem.reset();
-
-    
-};
+})
+ 
+}
 const onInput = () => {
     if (formElem.reportValidity()) {
       buttonElem.disabled = false;
@@ -28,5 +26,5 @@ const onInput = () => {
     }
 }
 formElem.addEventListener("input", onInput);
-buttonElem.addEventListener("click", onClick);
+buttonElem.addEventListener("click", putData);
 
