@@ -1,20 +1,9 @@
+const baseUrl = "https://63ad3e19da81ba97619671ad.mockapi.io/users";
+const buttonElem = document.querySelector(".submit-button");
 const formElem = document.querySelector(".login-form");
-const buttonElem = document.querySelector('.submit-button');
-const baseUrl = 'https://63ad3e19da81ba97619671ad.mockapi.io/users';
-
-const validate = () => {
-  if (formElem.reportValidity()) {
-    buttonElem.removeAttribute("disabled");
-  } else {
-    buttonElem.setAttribute("disabled", true);
-  }
-};
-
-formElem.addEventListener("input", validate);
 
 const putData = () => {
-let data =  Object.fromEntries(new FormData(formElem));
-console.log(data);
+  let data = Object.fromEntries(new FormData(formElem));
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
@@ -28,5 +17,13 @@ console.log(data);
 })
  
 }
+const onInput = () => {
+    if (formElem.reportValidity()) {
+      buttonElem.disabled = false;
+    } else {
+        buttonElem.disabled = true;
+    }
+}
+formElem.addEventListener("input", onInput);
+buttonElem.addEventListener("click", putData);
 
-buttonElem.addEventListener('click', putData);
