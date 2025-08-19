@@ -14,7 +14,9 @@ const putData = () => {
 .then(data => {
   alert(JSON.stringify(data));
   formElem.reset();
-})
+}).catch(error => {
+    console.error('Ошибка при загрузке данных:', error);
+  });
  
 }
 const onInput = () => {
