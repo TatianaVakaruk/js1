@@ -1,15 +1,16 @@
-const baseUrl = "https://63ad3e19da81ba97619671ad.mockapi.io/users";
+const baseUrl = "https://68a42ae6c123272fb9b19b0c.mockapi.io/name";
 const buttonElem = document.querySelector(".submit-button");
 const formElem = document.querySelector(".login-form");
 
-const putData = () => {
-  let data = Object.fromEntries(new FormData(formElem));
+const putData = (event) => {
+  event.preventDefault();
+  let data1 = Object.fromEntries(new FormData(formElem));
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json;charset=utf-8',
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(data1),
 }).then(response => response.json())
 .then(data => {
   alert(JSON.stringify(data));

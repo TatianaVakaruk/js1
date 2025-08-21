@@ -32,25 +32,3 @@
     opacity: 0.5;
   }
 }
-
-.name-form {
-  margin: 0 auto;
-
-  &__input {
-    height: 32px;
-    border: 3px solid #ccc;
-    border-radius: 8px;
-    flex: 1;
-    outline: none;
-  }
-}
-
-.btn {
-  height: 40px;
-  min-width: 64px;
-  border: 3px solid #ccc;
-  outline: none;
-  cursor: pointer;
-  border-radius: 8px;
-  margin-left: 16px;
-}
